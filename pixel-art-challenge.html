@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pixel Artist Challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+    <script type="text/javascript" src="https://github.com/github/fetch/releases/download/v3.0.0/fetch.umd.js"></script>
+    <script src="noopbots.js"></script>
+    <script src="pix-art-challenge.js"></script>
+    <style>
+      body, html,div {
+        margin: 0;
+        padding: 0;
+      }
+
+      body{
+        background: black;
+      }
+
+      p{
+        font-family: 'Press Start 2P';
+        font-size: 10pt;
+        color: whitesmoke;
+        display: inline;
+        margin:0px;
+        vertical-align: middle;
+
+      }
+   
+      h1{
+        font-family: 'Press Start 2P';
+        color: yellowgreen;
+        text-shadow: 2px 2px 8px yellowgreen;
+        display: inline;
+       
+      }
+      h3{
+        font-family: 'Press Start 2P';
+        color: rgb(205, 50, 97);
+        text-shadow: 2px 2px 8px rgb(205, 50, 97);
+        display: inline;
+      }
+      th{
+        padding: .5em;
+      }
+      select{
+        font-family: 'Press Start 2P';
+        background: darkgray;
+        color: whitesmoke;
+        -moz-appearance: none;
+      }
+      #title{
+        font-family: 'Press Start 2P';
+        margin-left: 55px;
+        margin-top: 50px;
+      }
+      .hexbot_draw{
+        position: fixed;
+        top: 100px;
+        left: 50px;
+        border-radius: 20px;
+        background: grey;
+        
+      }
+
+      #wrapper{
+      
+        border: 20px solid grey;
+        width: 500px;
+        height: 500px;
+      }
+
+      #canvas{
+        display: inline-block;
+        background: white;
+        border-radius: 10px;
+        width: 500px;
+        height: 500px;
+      }
+
+      #controls{
+        background: gray;  
+        display: block;
+        border: none;
+        width: 535px;
+        position: absolute;
+        padding-left: 5px;
+        text-align: left;
+      }
+
+      #control{
+        padding: 5px;
+      }
+
+      #color_preview{
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        vertical-align: middle;
+      }
+      
+      .slider{
+        vertical-align: middle;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: .2s;
+        border-radius: 5px;   
+        -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+
+      }
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background: rgb(205, 50, 97);
+        cursor: pointer;
+      }
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #rgb(205, 50, 97);
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id='title'>
+      <h1 >Pixel </h1> 
+      <h3 >Artist Challenge</h3>
+    </div>
+    <div class='hexbot_draw'>     
+      <div id = 'wrapper'>
+      <div id="canvas"></div>
+      </div>
+      <table id = 'controls'>
+          <tr> 
+            <th><p>Random Color Chosen: </p></th>
+            <th> <div id='color_preview'></div></th>
+          </tr>
+          <tr>
+            <th> <p>Size of Pixel:</p></th>
+            <th> <select id='font_size' onChange="font_selector()"></select> <p>px</p></th>
+          </tr>
+          <tr>
+            <th><p>Opacity:</p> </th>
+            <th> <input type='range' class='slider' id='opacity' min='0' max='1' step='0.01' value='1' oninput='onOpacityChange()'/> <p id='opacity_value'></p> </th>
+          </tr>
+      </table> 
+    </div>
+  </body>
+</html>
