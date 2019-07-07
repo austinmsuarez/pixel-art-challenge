@@ -1,4 +1,5 @@
-#Pixel Artist Challenge 
+# Pixel Artist Challenge 
+
 ![alt text](https://github.com/austinmsuarez/pixel-art-challenge/blob/master/pixelArt.png)
 ## Project Description 
 Here is a chance to make a masterpiece with one catch you get a random color. <br>
